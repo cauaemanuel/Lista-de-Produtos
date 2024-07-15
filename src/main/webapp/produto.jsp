@@ -11,7 +11,7 @@
 </head>
 <body>
 	<h1>Lista de Produtos</h1>
-	<a href="" class="Botao1">Novo Produto</a>
+	<a href="novo.html" class="Botao1">Novo Produto</a>
 
 </body>
 </html>

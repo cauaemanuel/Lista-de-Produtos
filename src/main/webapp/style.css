@@ -1,7 +1,8 @@
 @charset "UTF-8";
+
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
-body{
+body {
 	font-family: "Open Sans", sans-serif;
 	font-size: 1em;
 	font-weight: 400;
@@ -18,23 +19,40 @@ body{
 	background-color: white;
 }
 
-
-.img-central{
+.img-central {
 	height: 320px;
 }
 
-h1{
+h1 {
 	color: #36c6c6;
 }
 
-
-
-.Botao1{
+.Botao1 {
 	text-decoration: none;
 	background-color: #36c6c6;
-	padding: 5px 10px ;
+	padding: 5px 10px;
 	color: #fff;
 	font-size: 1.2em;
 	border-radius: 15px;
-	
+}
+
+.form-prod {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	padding: 5px;
+	gap: 10px;
+}
+
+.form-prod input {
+	padding: 10px;
+	border-radius: 5px;
+	border: 2px solid black;
+	transition: all 0.3s;
+}
+
+.adicionar-button:hover {
+	background-color: rgba(54, 198, 198, 0.5);
+	border: solid 2px #36c6c6;
 }
