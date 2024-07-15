@@ -1,0 +1,40 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+body{
+	font-family: "Open Sans", sans-serif;
+	font-size: 1em;
+	font-weight: 400;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	flex-direction: column;
+	background-color: white;
+}
+
+
+.img-central{
+	height: 320px;
+}
+
+h1{
+	color: #36c6c6;
+}
+
+
+
+.Botao1{
+	text-decoration: none;
+	background-color: #36c6c6;
+	padding: 5px 10px ;
+	color: #fff;
+	font-size: 1.2em;
+	border-radius: 15px;
+	
+}
