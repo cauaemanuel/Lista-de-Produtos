@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import model.DAO;
 import model.Product;
 
-@WebServlet(urlPatterns = { "/Controller", "/main", "/insert", "/select", "/update" })
+@WebServlet(urlPatterns = { "/Controller", "/main", "/insert", "/select", "/update", "/delete" })
 public class Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	DAO dao = new DAO();
@@ -26,7 +26,9 @@ public class Controller extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
 		String action = request.getServletPath();
+		System.out.println(action);
 		if (action.equals("/main")) {
 			produtos(request, response);
 		} else if (action.equals("/insert")) {
@@ -35,6 +37,8 @@ public class Controller extends HttpServlet {
 			listarProduto(request, response);
 		} else if (action.equals("/update")) {
 			editarProduto(request, response);
+		} else if (action.equals("/delete")) {
+			removerProduto(request, response);
 		} else {
 			response.sendRedirect("index.html");
 		}
@@ -83,7 +87,7 @@ public class Controller extends HttpServlet {
 		rd.forward(request, response);
 
 	}
-	
+
 	protected void editarProduto(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		prod.setIdprod(request.getParameter("idprod"));
@@ -91,7 +95,20 @@ public class Controller extends HttpServlet {
 		prod.setQuantidade(request.getParameter("quantidade"));
 		prod.setValor(request.getParameter("valor"));
 		dao.alterarProduto(prod);
-		
+
 		response.sendRedirect("main");
 	}
+
+	protected void removerProduto(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String idprod = request.getParameter("idprod");
+		prod.setIdprod(idprod);
+
+		System.out.println(idprod);
+		dao.deletarProduto(prod);
+
+		response.sendRedirect("main");
+		
+	}
+
 }

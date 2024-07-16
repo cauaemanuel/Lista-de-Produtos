@@ -27,6 +27,15 @@ h1 {
 	color: #36c6c6;
 }
 
+.Botao2 {
+	text-decoration: none;
+	background-color: #d51213;
+	padding: 5px 10px;
+	color: #fff;
+	font-size: 1.2em;
+	border-radius: 15px;
+}
+
 .Botao1 {
 	text-decoration: none;
 	background-color: #36c6c6;

@@ -37,12 +37,16 @@ ArrayList<Product> lista = (ArrayList<Product>) request.getAttribute("produtos")
 				<td><%=lista.get(i).getNome()%></td>
 				<td><%=lista.get(i).getQuantidade()%></td>
 				<td><%=lista.get(i).getValor()%></td>
-				<td><a href="select?idprod=<%=lista.get(i).getIdprod() %>" class="Botao1">Editar</a></td>
+				<td>
+					<a href="select?idprod=<%= lista.get(i).getIdprod() %>" class="Botao1">Editar</a>
+					<a href="javascript:confirmar(<%= lista.get(i).getIdprod() %>)" class="Botao2">Excluir</a>
+			  </td>
 			</tr>
 			<%
 			}
 			%>
 		</tbody>
 	</table>
+	<script src="scripts/confirmador.js"></script>
 </body>
 </html>

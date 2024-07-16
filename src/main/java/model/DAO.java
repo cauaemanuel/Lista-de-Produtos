@@ -120,4 +120,19 @@ public class DAO {
 			System.out.println(e);
 		}
 	}
+	
+	//crud delete
+	
+	public void deletarProduto(Product prod) {
+		String delete = "delete from produtos where idprod=?";
+		try {
+			Connection con = conectar();
+			PreparedStatement pst = con.prepareStatement(delete);
+			pst.setString(1, prod.getIdprod());
+			pst.executeUpdate();
+			con.close();
+		}catch(Exception e) {
+			System.out.println(e);
+		}
+	}
 }
