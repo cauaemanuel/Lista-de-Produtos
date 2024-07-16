@@ -8,16 +8,13 @@ import java.util.ArrayList;
 
 public class DAO {
 
-	/** conexao **/
-	// parametros para a conexao
 
 	private String driver = "com.mysql.cj.jdbc.Driver";
 	private String url = "jdbc:mysql://127.0.0.1:3306/dbproduto?useTimezone=true&serverTimesone=UTC";
 	private String user = "root";
 	private String password = "vegeta30";
 
-	// metodos de conexao
-
+	
 	private Connection conectar() {
 		Connection con = null;
 		try {
@@ -31,7 +28,7 @@ public class DAO {
 		}
 	}
 
-	// crud create
+	
 
 	public void insertProduto(Product produto) {
 		String create = "insert into produtos(nome, quantidade,valor) values (?,?,?)";
@@ -56,7 +53,7 @@ public class DAO {
 		}
 	}
 
-	// crud read
+	
 
 	public ArrayList<Product> listarProdutos() {
 		String read = "select * from produtos order by nome";
@@ -83,8 +80,7 @@ public class DAO {
 		}
 	}
 
-	// crud update
-	// selecionar contato
+	
 	public void selecionarContato(Product prod) {
 		String read2 = "select * from produtos where idprod = ?";
 		try {
@@ -121,7 +117,6 @@ public class DAO {
 		}
 	}
 	
-	//crud delete
 	
 	public void deletarProduto(Product prod) {
 		String delete = "delete from produtos where idprod=?";

@@ -3,6 +3,7 @@
 <%@ page import="model.Product"%>
 <%@ page import="java.util.ArrayList"%>
 <%
+@SuppressWarnings("unchecked")
 ArrayList<Product> lista = (ArrayList<Product>) request.getAttribute("produtos");
 %>
 <!DOCTYPE html>
@@ -17,6 +18,7 @@ ArrayList<Product> lista = (ArrayList<Product>) request.getAttribute("produtos")
 <body>
 	<h1>Lista de Produtos</h1>
 	<a href="novo.html" class="Botao1">Novo Produto</a>
+	<a href="report" class="Botao2 h1-a">Relatorio</a>
 
 	<table class="table-novo">
 		<thead>
@@ -37,10 +39,10 @@ ArrayList<Product> lista = (ArrayList<Product>) request.getAttribute("produtos")
 				<td><%=lista.get(i).getNome()%></td>
 				<td><%=lista.get(i).getQuantidade()%></td>
 				<td><%=lista.get(i).getValor()%></td>
-				<td>
-					<a href="select?idprod=<%= lista.get(i).getIdprod() %>" class="Botao1">Editar</a>
-					<a href="javascript:confirmar(<%= lista.get(i).getIdprod() %>)" class="Botao2">Excluir</a>
-			  </td>
+				<td><a href="select?idprod=<%=lista.get(i).getIdprod()%>"
+					class="Botao1">Editar</a> <a
+					href="javascript:confirmar(<%=lista.get(i).getIdprod()%>)"
+					class="Botao2">Excluir</a></td>
 			</tr>
 			<%
 			}
